@@ -40,9 +40,27 @@ export default {
 </script>
 
 <template>
+    <div class="jumbotron jumbotron-fluid my-5">
+      <div class="container">
+        <h1 class="display-3">All My Projects</h1>
+        <p class="lead">
+          This is a list of all the repositories I worked on during the 6 months
+          of the Boolean lessons.
+        </p>
+        <hr class="my-2" />
+        <p class="lead">
+          Visit my profile. =>
+          <a
+            class="btn btn-danger"
+            href="https://github.com/LucaRanieri96"
+            role="button"
+            >GitHub</a
+          >
+        </p>
+      </div>
+    </div>
   <section class="vue-home">
     <div class="container">
-      <h1 class="text-center py-5">Projects</h1>
       <div class="row g-3">
         <div class="col-12" v-for="project in projects" :key="project['id']">
           <div class="card">
@@ -64,7 +82,8 @@ export default {
               <ul>
                 <li
                   v-for="technology in project.technologies"
-                  :key="technology.id">
+                  :key="technology.id"
+                >
                   {{ technology.name }}
                 </li>
               </ul>
