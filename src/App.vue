@@ -27,9 +27,9 @@ export default {
           this.error = error.message;
         });
     },
-    getImage(path){
-        return this.base_API + 'storage/' + path;
-    }
+    getImage(path) {
+      return this.base_API + "storage/" + path;
+    },
   },
   mounted() {
     const url = this.base_API + this.projects_path;
@@ -42,20 +42,32 @@ export default {
 <template>
   <section class="vue-home">
     <div class="container">
-      <h1>Projects</h1>
-      <div class="row row-cols-1 row-cols-md-3 g-3">
-        <div class="col" v-for="project in projects">
-          <div class="card" style="width: 18rem">
-            <img class="card-img-top" :src="getImage(project.cover_image)" alt="Card image cap" />
+      <h1 class="text-center py-5">Projects</h1>
+      <div class="row g-3">
+        <div class="col-12" v-for="project in projects" :key="project['id']">
+          <div class="card">
+            <img
+              class="card-img-top"
+              :src="getImage(project.cover_image)"
+              alt="Card image cap"
+            />
             <div class="card-body">
               <h4 class="card-title">{{ project.name }}</h4>
               <h5>Repo: {{ project.repoUrl }}</h5>
               <h5>Date: {{ project.startingDate }}</h5>
-              <h5>id: {{ project.id }}</h5>
-              <p class="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
+              <h5>
+                Type:
+                <span v-if="project.type">{{ project.type.name }}</span>
+                <span v-else>N/A</span>
+              </h5>
+              <h5>Technologies:</h5>
+              <ul>
+                <li
+                  v-for="technology in project.technologies"
+                  :key="technology.id">
+                  {{ technology.name }}
+                </li>
+              </ul>
             </div>
           </div>
         </div>
@@ -78,5 +90,4 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 </style>
