@@ -11,9 +11,9 @@ export default {
 <template>
   <header>
     <nav class="navbar bg-light justify-content-around">
-        <a class="nav-link active" href="/">Home</a>
-        <a class="nav-link" href="/about">About</a>
-        <a class="nav-link" href="/contacts">Contact</a>
+        <router-link class="nav-link active" :to="{'name' : 'home'}">Home</router-link>
+        <router-link class="nav-link" :to="{'name' : 'about'}">About</router-link>
+        <router-link class="nav-link" :to="{'name' : 'contacts'}">Contact</router-link>
     </nav>
   </header>
   <ProjectList/>
