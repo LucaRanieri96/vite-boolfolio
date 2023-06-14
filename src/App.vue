@@ -18,18 +18,24 @@ export default {
       axios
         .get(url)
         .then((response) => {
-          console.log(response);
+          //console.log(response);
           this.projects = response.data.projects;
           this.loading = false;
         })
         .catch((error) => {
-          console.log(error);
+          //console.log(error);
           this.error = error.message;
         });
     },
     getImage(path) {
       return this.base_API + "storage/" + path;
     },
+    nextPage(path){
+      this.getProjects(path);
+    },
+    prevPage(path){
+      this.getProjects(path);
+    }
   },
   mounted() {
     const url = this.base_API + this.projects_path;
@@ -40,6 +46,7 @@ export default {
 </script>
 
 <template>
+
     <div class="jumbotron jumbotron-fluid my-5">
       <div class="container">
         <h1 class="display-3">All My Projects</h1>
@@ -59,10 +66,11 @@ export default {
         </p>
       </div>
     </div>
-  <section class="vue-home">
+
+  <section class="vue-home" v-if="projects">
     <div class="container">
       <div class="row g-3">
-        <div class="col-12" v-for="project in projects" :key="project['id']">
+        <div class="col-12" v-for="project in projects.data" :key="project['id']">
           <div class="card">
             <img
               class="card-img-top"
@@ -92,7 +100,23 @@ export default {
         </div>
       </div>
     </div>
+
   </section>
+
+  <nav aria-label="Page navigation">
+    <ul class="pagination my-4 ms-5">
+      <li class="page-item">
+        <button class="page-link" aria-label="Previous" v-if="projects.prev_page_url" @click="prevPage(projects.prev_page_url)">
+          <span aria-hidden="true">&laquo;</span>
+        </button>
+      </li>
+      <li class="page-item">
+        <button class="page-link" aria-label="Next" v-if="projects.next_page_url" @click="nextPage(projects.next_page_url)">
+          <span aria-hidden="true">&raquo;</span>
+        </button>
+      </li>
+    </ul>
+  </nav>
 </template>
 
 <style lang="scss">
