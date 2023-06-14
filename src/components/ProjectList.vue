@@ -94,6 +94,7 @@ export default {
                   {{ technology.name }}
                 </li>
               </ul>
+              <router-link name="" id="" class="btn btn-primary" :to="{ name:'single-project', params:{'slug': project.slug}}" role="button">Show Details</router-link>
             </div>
           </div>
         </div>
