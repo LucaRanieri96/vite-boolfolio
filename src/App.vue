@@ -47,7 +47,7 @@ export default {
 
 <template>
 
-    <div class="jumbotron jumbotron-fluid my-5">
+  <div class="jumbotron jumbotron-fluid my-5">
       <div class="container">
         <h1 class="display-3">All My Projects</h1>
         <p class="lead">
@@ -65,7 +65,7 @@ export default {
           >
         </p>
       </div>
-    </div>
+  </div>
 
   <section class="vue-home" v-if="projects">
     <div class="container">
@@ -116,8 +116,6 @@ export default {
       </ul>
     </nav>
   </section>
-
-  
 
 </template>
 
