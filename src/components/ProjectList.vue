@@ -28,7 +28,7 @@ export default {
         });
     },
     getImage(path) {
-      return this.base_API + "storage/" + path;
+      return this.base_API + path;
     },
     nextPage(path){
       this.getProjects(path);
