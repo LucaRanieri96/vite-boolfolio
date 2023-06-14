@@ -39,9 +39,13 @@ export default {
 </script>
 
 <template>
-  <h1>{{ $route.params.slug }}</h1>
+<section class="singleProject">
 
-  <div class="container">
+
+  <div class="container py-5">
+
+    <h1 class="text-center mb-4">PROJECT: {{ $route.params.slug }}</h1>
+
     <div class="col-12">
       <div v-if="project" class="card">
         <img
@@ -50,17 +54,17 @@ export default {
           alt="Card image cap"
         />
         <div class="card-body">
-          <h4 class="card-title">{{ project.name }}</h4>
-          <h5>Repo: {{ project.repoUrl }}</h5>
-          <h5>Date: {{ project.startingDate }}</h5>
-          <h5>
+          <h1 class="card-title">{{ project.name }}</h1>
+          <h2>Repo: {{ project.repoUrl }}</h2>
+          <h2>Date: {{ project.startingDate }}</h2>
+          <h3>
             Type:
-            <span v-if="project.type">{{ project.type.name }}</span>
-            <span v-else>N/A</span>
-          </h5>
-          <h5>Technologies:</h5>
+            <div v-if="project.type" class="badge">{{ project.type.name }}</div>
+            <div v-else>N/A</div>
+          </h3>
+          <h3>Technologies:</h3>
           <ul v-for="technology in project.technologies">
-            <li>
+            <li class="badge">
               {{ technology.name }}
             </li>
           </ul>
@@ -68,6 +72,24 @@ export default {
       </div>
     </div>
   </div>
+</section>
 </template>
 
-<style lang="sass" scoped></style>
+<style lang="scss" scoped>
+ .singleProject{
+  color: #d4d5d6;
+  background: #181818;
+  .badge{
+    background-color: rgb(0, 102, 255);
+  }
+  ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-left: 0.5rem;
+    li{
+      background-color: red !important;
+    }
+  }
+ }
+</style>
