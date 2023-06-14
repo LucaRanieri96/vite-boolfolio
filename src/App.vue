@@ -1,14 +1,15 @@
 <script>
 
-import HelloWorld from "./components/ProjectList.vue";
+
 
 export default {
-  components: {},
+  
  
 };
 </script>
 
 <template>
+
   <header>
     <nav class="navbar bg-light justify-content-around">
         <router-link class="nav-link active" :to="{'name' : 'home'}">Home</router-link>
@@ -16,8 +17,10 @@ export default {
         <router-link class="nav-link" :to="{'name' : 'contacts'}">Contact</router-link>
     </nav>
   </header>
-  <ProjectList/>
+
   <router-view></router-view>
+
+
 </template>
 
 <style lang="scss">
