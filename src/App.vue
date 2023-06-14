@@ -1,26 +1,17 @@
 <script>
-
-
+import AppHeader from "./components/AppHeader.vue";
 
 export default {
-  
- 
+  components: {
+    AppHeader,
+  },
 };
 </script>
 
 <template>
-
-  <header>
-    <nav class="navbar bg-light justify-content-around">
-        <router-link class="nav-link active" :to="{'name' : 'home'}">Home</router-link>
-        <router-link class="nav-link" :to="{'name' : 'about'}">About</router-link>
-        <router-link class="nav-link" :to="{'name' : 'contacts'}">Contact</router-link>
-    </nav>
-  </header>
+  <AppHeader />
 
   <router-view></router-view>
-
-
 </template>
 
 <style lang="scss">
