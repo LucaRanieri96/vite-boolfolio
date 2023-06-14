@@ -7,6 +7,7 @@ export default {
     return {
       project: null,
       base_API: "http://127.0.0.1:8000/",
+      error: null,
     };
   },
   components: {},
@@ -42,7 +43,7 @@ export default {
 
   <div class="container">
     <div class="col-12">
-      <div class="card">
+      <div v-if="project" class="card">
         <img
           class="card-img-top"
           :src="getImage(project.cover_image)"
@@ -58,8 +59,8 @@ export default {
             <span v-else>N/A</span>
           </h5>
           <h5>Technologies:</h5>
-          <ul>
-            <li v-for="technology in project.technologies" :key="technology.id">
+          <ul v-for="technology in project.technologies">
+            <li>
               {{ technology.name }}
             </li>
           </ul>
