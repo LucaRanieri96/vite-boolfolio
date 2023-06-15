@@ -11,6 +11,7 @@ export default {
       loading: true,
       projects: null,
       error: null,
+      filterTerm: [],
     };
   },
   methods: {
@@ -26,6 +27,17 @@ export default {
           //console.log(error);
           this.error = error.message;
         });
+    },
+    filterProjects() {
+      if (this.filterTerm) {
+        const filteredProjects = this.projects.data.filter(
+          (project) => project.name.toLowerCase().includes(this.filterTerm.toLowerCase())
+        );
+        this.projects.data = filteredProjects;
+      } else {
+        const url = this.base_API + this.projects_path;
+        this.getProjects(url);
+      }
     },
     getImage(path) {
       return this.base_API + path;
@@ -67,6 +79,18 @@ export default {
   </div>
 
   <section class="vue- pt-4" v-if="projects">
+    <div class="container d-flex mt-3 mb-3 justify-content-end">
+      <input
+        type="text"
+        name="name"
+        id="name"
+        class="me-2"
+        aria-describedby="helpId"
+        placeholder="Search"
+        v-model="filterTerm"
+        @input="filterProjects"
+      />
+    </div>
     <div class="container">
       <div class="row">
         <div
@@ -96,14 +120,18 @@ export default {
       </div>
     </div>
 
-    <nav aria-label="Page navigation" class="d-flex justify-content-center mt-5">
+    <nav
+      aria-label="Page navigation"
+      class="d-flex justify-content-center mt-5"
+    >
       <ul class="pagination">
         <li class="page-item">
           <button
             class="btn btn-outline-light"
             aria-label="Previous"
             v-if="projects.prev_page_url"
-            @click="prevPage(projects.prev_page_url)">
+            @click="prevPage(projects.prev_page_url)"
+          >
             <span aria-hidden="true">&laquo;</span>
           </button>
         </li>
@@ -112,7 +140,8 @@ export default {
             class="btn btn-outline-light"
             aria-label="Next"
             v-if="projects.next_page_url"
-            @click="nextPage(projects.next_page_url)">
+            @click="nextPage(projects.next_page_url)"
+          >
             <span aria-hidden="true">&raquo;</span>
           </button>
         </li>
@@ -122,14 +151,20 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-.jumbotron{
+input {
+  background-color: rgba($color: #ebebeb, $alpha: 0.2);
+  color: white;
+  border: 0;
+  border-radius: 0.2rem;
+}
+.jumbotron {
   background-color: rgba($color: #838383, $alpha: 0.1);
 }
-.card{
+.card {
   border: 0;
   background-color: rgba($color: #e2e2e2, $alpha: 0.2);
   color: white;
-  img{
+  img {
     height: 400px;
   }
 }
