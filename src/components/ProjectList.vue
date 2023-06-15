@@ -126,6 +126,9 @@ export default {
   background-color: rgba($color: #838383, $alpha: 0.1);
 }
 .card{
+  border: 0;
+  background-color: rgba($color: #e2e2e2, $alpha: 0.2);
+  color: white;
   img{
     height: 400px;
   }
