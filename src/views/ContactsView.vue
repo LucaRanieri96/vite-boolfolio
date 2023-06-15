@@ -15,7 +15,6 @@ export default {
             name="name"
             id="name"
             class="form-control"
-            placeholder="Luca Ranieri"
             aria-describedby="helpId"
           />
           <small id="nameHelper" class="text-muted"
@@ -30,7 +29,6 @@ export default {
             name="email"
             id="email"
             class="form-control"
-            placeholder="Luca@mail.com"
             aria-describedby="helpId"
           />
           <small id="emailHelper" class="text-muted"
@@ -59,6 +57,10 @@ export default {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  input, textarea{
+    background-color: rgba($color: #e9e9e9, $alpha: 0.2) !important;
+    color: white;
+  }
   small{
     color: white !important;
   }

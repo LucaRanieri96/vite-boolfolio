@@ -54,20 +54,22 @@ export default {
           alt="Card image cap"
         />
         <div class="card-body">
-          <h1 class="card-title">{{ project.name }}</h1>
-          <h2>Repo: {{ project.repoUrl }}</h2>
-          <h2>Date: {{ project.startingDate }}</h2>
-          <h3>
+          <h2 class="mb-2">Repo: {{ project.repoUrl }}</h2>
+          <h3 class="mb-2">Date: {{ project.startingDate }}</h3>
+          <h4 class="mb-2">
             Type:
             <div v-if="project.type" class="badge">{{ project.type.name }}</div>
             <div v-else>N/A</div>
-          </h3>
-          <h3>Technologies:</h3>
-          <ul v-for="technology in project.technologies">
-            <li class="badge">
-              {{ technology.name }}
-            </li>
-          </ul>
+          </h4>
+          <div class="d-flex align-items-center mb-2">
+            <h4>Technologies:</h4>
+            <ul v-for="technology in project.technologies">
+              <li class="badge">
+                {{ technology.name }}
+              </li>
+            </ul>
+
+          </div>
         </div>
       </div>
     </div>
@@ -77,8 +79,14 @@ export default {
 
 <style lang="scss" scoped>
  .singleProject{
-  color: #d4d5d6;
-  background: #181818;
+  h2,h3,h4{
+    margin: 0;
+  }
+  .card{
+    background-color: rgba($color: #e9e9e9, $alpha: 0.2);
+    border: 0;
+    color: white;
+  }
   .badge{
     background-color: rgb(0, 102, 255);
   }
