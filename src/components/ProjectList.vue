@@ -66,7 +66,7 @@ export default {
     </div>
   </div>
 
-  <section class="vue-home py-5" v-if="projects">
+  <section class="vue- pt-4" v-if="projects">
     <div class="container">
       <div class="row">
         <div
@@ -96,25 +96,23 @@ export default {
       </div>
     </div>
 
-    <nav aria-label="Page navigation" class="d-flex justify-content-center">
-      <ul class="pagination my-4">
+    <nav aria-label="Page navigation" class="d-flex justify-content-center mt-5">
+      <ul class="pagination">
         <li class="page-item">
           <button
-            class="page-link"
+            class="btn btn-outline-light"
             aria-label="Previous"
             v-if="projects.prev_page_url"
-            @click="prevPage(projects.prev_page_url)"
-          >
+            @click="prevPage(projects.prev_page_url)">
             <span aria-hidden="true">&laquo;</span>
           </button>
         </li>
         <li class="page-item">
           <button
-            class="page-link"
+            class="btn btn-outline-light"
             aria-label="Next"
             v-if="projects.next_page_url"
-            @click="nextPage(projects.next_page_url)"
-          >
+            @click="nextPage(projects.next_page_url)">
             <span aria-hidden="true">&raquo;</span>
           </button>
         </li>
@@ -124,6 +122,9 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+.jumbotron{
+  background-color: rgba($color: #838383, $alpha: 0.1);
+}
 .card{
   img{
     height: 400px;
@@ -131,6 +132,8 @@ export default {
 }
 .vue-home {
   color: #d4d5d6;
-  background: #181818;
+  background-image: url(../assets/imgs/VmZHnTO.webp);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 </style>

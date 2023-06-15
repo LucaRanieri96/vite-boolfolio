@@ -26,7 +26,9 @@ export default {
 @use "./styles/general.scss";
 
 .body{
-  color: #d4d5d6;
-  background: #181818;
+  color: #eeeeee;
+  background-image: url(./assets/imgs/VmZHnTO.webp);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 </style>

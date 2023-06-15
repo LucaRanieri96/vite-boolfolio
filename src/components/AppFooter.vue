@@ -11,22 +11,22 @@ export default {
     </div>
     <ul class="nav col-md-4 justify-content-end list-unstyled d-flex align-content-center gap-4">
       <li>
-        <a href="">
+        <a href="https://www.youtube.com/@videogiuoco2055/videos">
           <font-awesome-icon icon="fa-brands fa-twitter" />
         </a>
       </li>
       <li>
-        <a href="">
+        <a href="https://www.youtube.com/@videogiuoco2055/videos">
           <font-awesome-icon icon="fa-brands fa-youtube" />
         </a>
       </li>
       <li>
-        <a href="">
+        <a href="https://www.twitch.tv/videogiuoco">
           <font-awesome-icon :icon="['fab', 'twitch']" />
         </a>
       </li>
       <li>
-        <a href="">
+        <a href="https://www.instagram.com/lucaranieri96/">
           <font-awesome-icon icon="fa-brands fa-instagram" />
         </a>
       </li>

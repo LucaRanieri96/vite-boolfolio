@@ -40,7 +40,7 @@ export default {
 
         <div class="mb-3">
           <div for="message" class="form-label">Message:</div>
-          <textarea name="message" id="message" cols="100" rows="8"></textarea>
+          <textarea class="form-control rounded" name="message" id="message" rows="8"></textarea>
         </div>
 
         <button type="submit" class="btn btn-primary me-2">Send</button>
@@ -52,14 +52,15 @@ export default {
 
 <style lang="scss" scoped>
   .contact-me {
-  color: #d4d5d6;
-  background: #181818;
   font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
-  font-size: 15px;
+  font-size: 20px;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  small{
+    color: white !important;
+  }
 }
 </style>

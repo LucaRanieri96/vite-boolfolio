@@ -9,7 +9,7 @@ export default {
     <div class="container my-5">
       <h2>Hello.</h2>
       <h2>My name is Luca Ranieri</h2>
-      
+
       <p class="mt-5">
         This is my first work on a full-stack project alone, and this is my
         front-end application
@@ -34,12 +34,6 @@ export default {
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-size: calc(10px + 0.33vw);
   padding: 5vh 10vw;
-  color: #e1e0e0;
-  background-color: #181818;
-  background-image: url("./bg-img/wp5502431-gradient-4k-wallpapers.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
 }
 
 h2 {
