@@ -26,9 +26,13 @@ export default {
         if (response.data.success) {
           this.project = response.data.project;
         } else {
-          
+          this.$router.push({
+            name: "NotFound",
+            params: { pathMatch: this.$route.path.substring(1).split("/") },
+            query: this.$route.query,
+            hash: this.$route.hash,
+          });
         }
-        
       })
       .catch((error) => {
         console.log(error);
@@ -39,65 +43,65 @@ export default {
 </script>
 
 <template>
-<section class="singleProject">
+  <section class="singleProject">
+    <div class="container py-5">
+      <h1 class="text-center mb-4">PROJECT: {{ $route.params.slug }}</h1>
 
-
-  <div class="container py-5">
-
-    <h1 class="text-center mb-4">PROJECT: {{ $route.params.slug }}</h1>
-
-    <div class="col-12">
-      <div v-if="project" class="card">
-        <img
-          class="card-img-top"
-          :src="getImage(project.cover_image)"
-          alt="Card image cap"
-        />
-        <div class="card-body">
-          <h2 class="mb-2">Repo: {{ project.repoUrl }}</h2>
-          <h3 class="mb-2">Date: {{ project.startingDate }}</h3>
-          <h4 class="mb-2">
-            Type:
-            <div v-if="project.type" class="badge">{{ project.type.name }}</div>
-            <div v-else>N/A</div>
-          </h4>
-          <div class="d-flex align-items-center mb-2">
-            <h4>Technologies:</h4>
-            <ul v-for="technology in project.technologies">
-              <li class="badge">
-                {{ technology.name }}
-              </li>
-            </ul>
-
+      <div class="col-12">
+        <div v-if="project" class="card">
+          <img
+            class="card-img-top"
+            :src="getImage(project.cover_image)"
+            alt="Card image cap"
+          />
+          <div class="card-body">
+            <h2 class="mb-2">Repo: {{ project.repoUrl }}</h2>
+            <h3 class="mb-2">Date: {{ project.startingDate }}</h3>
+            <h4 class="mb-2">
+              Type:
+              <div v-if="project.type" class="badge">
+                {{ project.type.name }}
+              </div>
+              <div v-else>N/A</div>
+            </h4>
+            <div class="d-flex align-items-center mb-2">
+              <h4>Technologies:</h4>
+              <ul v-for="technology in project.technologies">
+                <li class="badge">
+                  {{ technology.name }}
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 </template>
 
 <style lang="scss" scoped>
- .singleProject{
-  h2,h3,h4{
+.singleProject {
+  h2,
+  h3,
+  h4 {
     margin: 0;
   }
-  .card{
+  .card {
     background-color: rgba($color: #e9e9e9, $alpha: 0.2);
     border: 0;
     color: white;
   }
-  .badge{
+  .badge {
     background-color: rgb(0, 102, 255);
   }
-  ul{
+  ul {
     list-style: none;
     padding: 0;
     margin: 0;
     margin-left: 0.5rem;
-    li{
+    li {
       background-color: red !important;
     }
   }
- }
+}
 </style>

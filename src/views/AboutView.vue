@@ -34,6 +34,8 @@ export default {
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-size: calc(10px + 0.33vw);
   padding: 5vh 10vw;
+  height: 980px;
+
 }
 
 h2 {
