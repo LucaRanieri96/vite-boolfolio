@@ -124,5 +124,8 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-
+.vue-home {
+  color: #d4d5d6;
+  background: #181818;
+}
 </style>

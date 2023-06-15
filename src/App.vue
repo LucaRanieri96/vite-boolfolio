@@ -1,31 +1,32 @@
 <script>
 import AppHeader from "./components/AppHeader.vue";
+import AppFooter from "./components/AppFooter.vue";
 
 export default {
   components: {
     AppHeader,
+    AppFooter,
   },
 };
 </script>
 
 <template>
   <AppHeader />
+  
+  <div class="body">
+    <router-view></router-view>
 
-  <router-view></router-view>
+  </div>
+
+  <AppFooter />
+  
 </template>
 
 <style lang="scss">
 @use "./styles/general.scss";
 
-.vue-home {
+.body{
   color: #d4d5d6;
   background: #181818;
-  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  font-size: 15px;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 </style>

@@ -6,7 +6,7 @@ export default {
 
 <template>
   <section class="contact-me">
-    <div class="container my-5">
+    <div class="container py-5">
       <form>
         <div class="mb-3">
           <label for="name" class="form-label">Name</label>
@@ -50,4 +50,16 @@ export default {
   </section>
 </template>
 
-<style lang="sass" scoped></style>
+<style lang="scss" scoped>
+  .contact-me {
+  color: #d4d5d6;
+  background: #181818;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  font-size: 15px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+</style>
