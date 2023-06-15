@@ -124,6 +124,11 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+.card{
+  img{
+    height: 400px;
+  }
+}
 .vue-home {
   color: #d4d5d6;
   background: #181818;
