@@ -58,25 +58,7 @@ export default {
 </script>
 
 <template>
-  <div class="jumbotron jumbotron-fluid py-5">
-    <div class="container">
-      <h1 class="display-3">All My Projects</h1>
-      <p class="lead">
-        This is a list of all the repositories I worked on during the 6 months
-        of the Boolean lessons.
-      </p>
-      <hr class="my-2" />
-      <p class="lead">
-        Visit my profile. =>
-        <a
-          class="btn btn-danger"
-          href="https://github.com/LucaRanieri96"
-          role="button"
-          >GitHub</a
-        >
-      </p>
-    </div>
-  </div>
+  
 
   <section class="vue- pt-4" v-if="projects">
     <div class="container d-flex mt-3 mb-3 justify-content-end">
@@ -156,9 +138,6 @@ input {
   color: white;
   border: 0;
   border-radius: 0.2rem;
-}
-.jumbotron {
-  background-color: rgba($color: #838383, $alpha: 0.1);
 }
 .card {
   border: 0;
