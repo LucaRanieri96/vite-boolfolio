@@ -39,7 +39,7 @@ export default {
   color: #eeeeee;
   position: relative;
   overflow: hidden;
-  height: calc(100vh - 250px);
+  min-height: calc(100vh - 250px);
 }
 
 body::-webkit-scrollbar {
