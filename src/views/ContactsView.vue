@@ -54,7 +54,6 @@ export default {
     Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   font-size: 20px;
-  height: 980px;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

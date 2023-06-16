@@ -5,7 +5,7 @@ export default {
 </script>
 
 <template>
-  <footer class="d-flex flex-wrap justify-content-between align-items-center p-5 my-4 border-top"> 
+  <footer class="d-flex flex-wrap justify-content-between align-items-center p-5"> 
     <div class="align-items-center text">
       Luca Ranieri/Boolean 2023
     </div>
@@ -35,6 +35,12 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+
+footer{
+  background-color: rgba($color: #000000, $alpha: 0.75);
+  color: white;
+  height: 150px;
+}
  .text{
   font-size: 24px;
  }

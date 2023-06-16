@@ -46,7 +46,9 @@ export default {
 
 <style lang="scss" scoped>
 .navbar {
+  background-color: rgba($color: #000000, $alpha: 0.7);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  height: 100px;
   .navbar-brand {
     font-size: 1.8rem !important;
   }
@@ -58,7 +60,7 @@ export default {
 .logo{
   font-size: 2.5rem !important;
   font-weight: 600;
-  color: #000000;
+  color: white;
   text-decoration: none;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -72,12 +74,12 @@ ul {
 
 ul li a {
   position: relative;
-  font-size: 1.6rem;
+  font-size: 2rem;
   text-decoration: none;
   letter-spacing: 2px;
   text-transform: uppercase;
   color: transparent;
-  -webkit-text-stroke: 1px rgba($color: #000000, $alpha: 0.5);
+  -webkit-text-stroke: 1px rgba($color: #ffffff, $alpha: 0.5);
 }
 
 ul li a:hover {
@@ -87,7 +89,7 @@ ul li a:hover {
 ul li a::before {
   content: attr(data-text);
   position: absolute;
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
   width: 0%;
   overflow: hidden;
   transition: 1s;
@@ -95,10 +97,10 @@ ul li a::before {
 
 ul li a:hover::before {
   width: 100%;
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
 }
 .router-link-active,
 .router-link-exact-active {
-  color: rgb(0, 0, 0) !important;
+  color: rgb(255, 255, 255) !important;
 }
 </style>
