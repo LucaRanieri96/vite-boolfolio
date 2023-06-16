@@ -1,6 +1,7 @@
 <script>
 import AppHeader from "./components/AppHeader.vue";
 import AppFooter from "./components/AppFooter.vue";
+import { gsap } from "gsap";
 
 export default {
   components: {
@@ -13,7 +14,7 @@ export default {
   },
   mounted() {
     const videoElement = this.$refs.videoElement;
-    videoElement.playbackRate = 0.33;
+    videoElement.playbackRate = 0.5;
   },
 };
 </script>
