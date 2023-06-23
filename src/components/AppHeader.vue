@@ -10,7 +10,7 @@ export default {
       <a class="logo" href="/">LR-PROJECTS</a>
 
       <button
-        class="navbar-toggler"
+        class="navbar-toggler white-button"
         type="button"
         data-bs-toggle="collapse"
         data-bs-target="#navbarSupportedContent"
@@ -44,6 +44,14 @@ export default {
   background-color: rgba($color: #000000, $alpha: 0.7) !important;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
   padding: 20px;
+}
+.white-button {
+  background-color: rgba($color: #ffffff, $alpha: 0.6);
+  transition: all 1s;
+}
+
+.white-button:hover {
+  background-color: rgba($color: #ffffff, $alpha: 1);
 }
 .logo{
   font-size: 2.5rem !important;
