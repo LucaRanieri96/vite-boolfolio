@@ -59,7 +59,6 @@ export default {
 
 <template>
   
-
   <section class="vue- pt-4" v-if="projects">
     <div class="container d-flex mt-3 mb-3 justify-content-end">
       <input
@@ -74,9 +73,9 @@ export default {
       />
     </div>
     <div class="container">
-      <div class="row">
+      <div class="row row-cols-1 row-cols-lg-2">
         <div
-          class="col-6 g-3"
+          class="g-3"
           v-for="project in projects.data"
           :key="project['id']"
         >

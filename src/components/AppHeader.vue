@@ -6,36 +6,31 @@ export default {
 
 <template>
   <header>
-    <nav
-      class="navbar navbar-expand-lg justify-content-between px-5 sticky-top"
-    >
+    <nav class="navbar navbar-expand-lg px-5 sticky-top">
       <a class="logo" href="/">LR-PROJECTS</a>
 
-      <div class="gap-2 links">
-        <ul class="d-flex">
-          <li>
-            <router-link
-              class="dropdown-item"
-              :to="{ name: 'about' }"
-              data-text="About"
-              >About</router-link
-            >
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <router-link class="nav-link links" :to="{ name: 'about' }">About</router-link>
           </li>
-          <li>
-            <router-link
-              class="dropdown-item"
-              :to="{ name: 'projects' }"
-              data-text="Projects"
-              >Projects</router-link
-            >
+          <li class="nav-item">
+            <router-link class="nav-link links" :to="{ name: 'projects' }">Projects</router-link>
           </li>
-          <li>
-            <router-link
-              class="dropdown-item"
-              :to="{ name: 'contacts' }"
-              data-text="Contact"
-              >Contact</router-link
-            >
+          <li class="nav-item">
+            <router-link class="nav-link links" :to="{ name: 'contacts' }">Contact</router-link>
           </li>
         </ul>
       </div>
@@ -46,17 +41,10 @@ export default {
 
 <style lang="scss" scoped>
 .navbar {
-  background-color: rgba($color: #000000, $alpha: 0.7);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-  height: 100px;
-  .navbar-brand {
-    font-size: 1.8rem !important;
-  }
-  .links {
-    font-size: 1.3rem;
-  }
+  background-color: rgba($color: #000000, $alpha: 0.7) !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+  padding: 20px;
 }
-
 .logo{
   font-size: 2.5rem !important;
   font-weight: 600;
@@ -82,23 +70,6 @@ ul li a {
   -webkit-text-stroke: 1px rgba($color: #ffffff, $alpha: 0.5);
 }
 
-ul li a:hover {
-  color: transparent;
-}
-
-ul li a::before {
-  content: attr(data-text);
-  position: absolute;
-  color: rgb(255, 255, 255);
-  width: 0%;
-  overflow: hidden;
-  transition: 1s;
-}
-
-ul li a:hover::before {
-  width: 100%;
-  color: rgb(255, 255, 255);
-}
 .router-link-active,
 .router-link-exact-active {
   color: rgb(255, 255, 255) !important;
