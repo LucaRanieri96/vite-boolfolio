@@ -1,15 +1,17 @@
 <script>
-
 export default {
-  name: "NotFound"
+  name: "NotFound",
 };
 </script>
 
 <template>
-<section class="notfound">
+  <section class="notfound">
     <div class="container py-5">
       <div class="row">
         <h1 class="text-center mb-4">Errore 404 - Page not found</h1>
+        <div class="image-container">
+          <img src="/assets/imgs/notfound.gif" alt="">
+        </div>
         <p class="text-center">page doesn't exist</p>
       </div>
     </div>
@@ -17,12 +19,20 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-  .notfound {
-  .container {
-    height: 980px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+.notfound .container {
+  min-height: 980px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+.image-container {
+  display: flex;
+  justify-content: center;
+}
+
+.image-container img{
+  
+}
+
 </style>
