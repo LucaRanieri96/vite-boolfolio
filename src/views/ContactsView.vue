@@ -33,7 +33,8 @@ export default {
       axios
         .post("http://127.0.0.1:8000/api/contacts", data)
         .then((response) => {
-          console.log(response);
+          //console.log(response);
+          this.success = response.data.success
           if (!response.data.success) {
             this.errors = response.data.errors;
           } else {
@@ -46,7 +47,7 @@ export default {
           this.loading = false;
         })
         .catch((err) => {
-          console.log(err);
+          //console.log(err);
           this.loading = false;
         });
     },
@@ -57,6 +58,12 @@ export default {
 <template>
   <section class="contact-me">
     <div class="container py-5">
+
+      <div v-if="success" class="alert alert-success" role="alert">
+        <strong>Email inviata!</strong> Arriverà una risposta il prima possibile.
+      </div>
+      
+
       <form @submit.prevent="submitForm()">
         <div class="mb-3">
           <label for="name" class="form-label">Name</label>
