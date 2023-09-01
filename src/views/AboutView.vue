@@ -17,7 +17,7 @@ export default {
       <p>
         I'm working with Laravel/Breeze to manage the backend part of the
         project, so the dialogue with the database and its management through
-        CRUDS operations.
+        CRUD operations.
       </p>
       <p>
         While for the frontend part I'm using Vite/VueJS plus external
@@ -25,16 +25,38 @@ export default {
         responsive.
       </p>
     </div>
+
+    <div class="row row-cols-1 p-5 justify-content-center">
+      <div
+        class="col image-preview"
+        :class="{ open: isImageOpen }"
+      >
+        <div id="icon">
+          <font-awesome-icon :icon="['fas', 'eye']"/>
+        </div>
+        <img
+          id="curriculum-thumbnail"
+          src="assets/imgs/Luca-Ranieri.png"
+          alt=""
+        />
+      </div>
+      <div class="col d-flex p-3 justify-content-center">
+        <a
+          href="assets/downloads/LucaRanieri.pdf"
+          download="lucaranieri.pdf"
+          class="btn btn-primary w-25"
+          >Scarica il mio CV</a
+        >
+      </div>
+    </div>
   </section>
 </template>
 
-<style lang="scss" scoped>
+<style scoped lang="scss">
 .aboutme {
-  font-family: "Rubik", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: "Rubik", sans-serif;
   font-size: calc(10px + 0.33vw);
   padding: 5vh 10vw;
-
 }
 
 h2 {
@@ -43,9 +65,38 @@ h2 {
 }
 
 p {
+  max-width: 32em;
   font-size: 1.6em;
   font-weight: 300;
   line-height: 1.4;
-  max-width: 28em;
+}
+
+.image-preview {
+  height: 300px;
+  width: 500px;
+  padding-bottom: 2rem;
+  overflow: hidden;
+  cursor: pointer;
+  transition: filter 0.3s;
+  position: relative;
+  img{
+    width: 100%;
+  }
+  &:hover #icon {
+    display: block;
+  }
+}
+
+.image-preview #icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: none;
+  font-size: 24px;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.image-preview:hover {
+  filter: brightness(70%);
 }
 </style>
